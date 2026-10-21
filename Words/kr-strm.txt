@@ -18,9 +18,10 @@ Bad Guys 2014 => Bad Guys {[tmdbid=61700;type=tv;s=1]}
 (?i)Rude.Miss.Young-Ae.S16 => Rude.Miss.Young-Ae.S16 {[tmdbid=86542;type=tv;s=16]}
 (?i)The.Player.S01 => The.Player.S01 {[tmdbid=82032;type=tv;s=1]}
 终极玩家 => 终极玩家 {[tmdbid=82032;type=tv;s=1]}
-(?i)Save Me E => Save Me E {[tmdbid=72690;type=tv;s=1]}
-(?i)Duel E => Duel E {[tmdbid=71564;type=tv;s=1]}
-(?i)Tunnel E => Tunnel E {[tmdbid=70440;type=tv;s=1]}
+#E+两位数集数修正：资源用 "E15" 直连集数，识别器会把它当剧名一部分导致集数丢失，需用捕获组把数字转成集数
+(?i)Tunnel E(\d+) => Tunnel 第\1集 {[tmdbid=70440;type=tv;s=1]}
+(?i)Duel E(\d+) => Duel 第\1集 {[tmdbid=71564;type=tv;s=1]}
+(?i)Save Me E(\d+) => Save Me 第\1集 {[tmdbid=72690;type=tv;s=1]}
 Teoneol 2017 => Teoneol 2017 {[tmdbid=70440;type=tv;s=1]}
 (?i)Stranger.S02 => Stranger.S02 {[tmdbid=70626;type=tv;s=2]}
 Stranger02 2020 => Stranger02 2020 {[tmdbid=70626;type=tv;s=2]}
@@ -42,15 +43,5 @@ The Last Chance 2019 => The Last Chance 2019 {[tmdbid=87425;type=tv;s=1]}
 Voice2 2018 => Voice2 2018 {[tmdbid=69087;type=tv;s=2]}
 
 #---------- 容器格式词 ----------
-#容器格式词（MP4/MKV/AVI/TS 等）不作为视频编码，仅当作独立字段时移除
-(?i)(?<=[. _-])(?:MP4|MKV|AVI|WMV|M2TS|MTS|MOV|FLV|RMVB|WEBM|TS)(?=[. _-]) =>
-
-#---------- E+集数 识别修正（2026-10 补） ----------
-#部分资源用 "E15" 直连两位数集数，识别器会把它当成剧名一部分导致集数丢失
-(?i)Tunnel E(\d+) => Tunnel 第\1集 {[tmdbid=70440;type=tv;s=1]}
-(?i)Duel E(\d+) => Duel 第\1集 {[tmdbid=71564;type=tv;s=1]}
-(?i)Save Me E(\d+) => Save Me 第\1集 {[tmdbid=72690;type=tv;s=1]}
-
-#---------- 容器格式词 方括号修正（2026-10 补） ----------
-#源目录中用方括号包裹的 [MP4] 会被误判为视频编码，需把方括号纳入边界
+#容器格式词（MP4/MKV/AVI/TS 等）不作为视频编码，仅当作独立字段时移除；边界含方括号以覆盖 [MP4] 这类源目录标签
 (?i)(?<=[. _\[\]-])(?:MP4|MKV|AVI|WMV|M2TS|MTS|MOV|FLV|RMVB|WEBM|TS)(?=[. _\[\]-]) =>
