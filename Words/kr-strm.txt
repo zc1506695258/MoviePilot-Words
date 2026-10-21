@@ -1,0 +1,46 @@
+#===== 韩剧 UHDTV/STRM 识别修正 =====
+#原则：替换文本必须保留原剧名，禁止把片名整段替换为纯 tag，否则元数据解析链会塌陷（pix/video/audio 全部为 null）
+#用于 UHDTV 分享的 STRM 文件识别，统一补全 tmdbid 与季数
+
+#---------- 韩剧剧集 ----------
+Signal 2016 => Signal {[tmdbid=64840;type=tv;s=1]}
+What's Wrong With Secretary Kim => What's Wrong With Secretary Kim {[tmdbid=79434;type=tv;s=1]}
+What‘s Wrong With Secretary Kim => What‘s Wrong With Secretary Kim {[tmdbid=79434;type=tv;s=1]}
+Good Wife 2016 => Good Wife {[tmdbid=66781;type=tv;s=1]}
+(?i)Bad Guys E => Bad Guys E {[tmdbid=61700;type=tv;s=1]}
+Bad Guys 2014 => Bad Guys {[tmdbid=61700;type=tv;s=1]}
+坏家伙们2 => 坏家伙们2 {[tmdbid=75765;type=tv;s=1]}
+(?i)Trap E => Trap E {[tmdbid=86051;type=tv;s=1]}
+트랩 => 트랩 {[tmdbid=86051;type=tv;s=1]}
+圈套 => 圈套 {[tmdbid=86051;type=tv;s=1]}
+(?i)Search([._ ])S01 => Search.2020.S01
+(?i)Search 2020 => Search 2020 {[tmdbid=99492;type=tv;s=1]}
+(?i)Rude.Miss.Young-Ae.S16 => Rude.Miss.Young-Ae.S16 {[tmdbid=86542;type=tv;s=16]}
+(?i)The.Player.S01 => The.Player.S01 {[tmdbid=82032;type=tv;s=1]}
+终极玩家 => 终极玩家 {[tmdbid=82032;type=tv;s=1]}
+(?i)Save Me E => Save Me E {[tmdbid=72690;type=tv;s=1]}
+(?i)Duel E => Duel E {[tmdbid=71564;type=tv;s=1]}
+(?i)Tunnel E => Tunnel E {[tmdbid=70440;type=tv;s=1]}
+Teoneol 2017 => Teoneol 2017 {[tmdbid=70440;type=tv;s=1]}
+(?i)Stranger.S02 => Stranger.S02 {[tmdbid=70626;type=tv;s=2]}
+Stranger02 2020 => Stranger02 2020 {[tmdbid=70626;type=tv;s=2]}
+하늘에서 내리는 일억 개의 별 => 하늘에서 내리는 일억 개의 별 {[tmdbid=82501;type=tv;s=1]}
+처용 2 => 처용 2 {[tmdbid=63470;type=tv;s=2]}
+닥터프로스트 => 닥터프로스트 {[tmdbid=61699;type=tv;s=1]}
+Fantasy Timing => Fantasy Timing {[tmdbid=234065;type=tv;s=1]}
+Let‘s Fight Ghost => Let‘s Fight Ghost {[tmdbid=66393;type=tv;s=1]}
+Let's Fight Ghost => Let's Fight Ghost {[tmdbid=66393;type=tv;s=1]}
+(?i)Times.S01 => Times.S01 {[tmdbid=116673;type=tv;s=1]}
+UXN 라이프 온 마스 => UXN 라이프 온 마스 {[tmdbid=79407;type=tv;s=1]}
+(?i)Memories.of.the.Alhambra => Memories.of.the.Alhambra {[tmdbid=83634;type=tv;s=1]}
+Misty 2018 => Misty 2018 {[tmdbid=76715;type=tv;s=1]}
+Record of Youth => Record of Youth {[tmdbid=99047;type=tv;s=1]}
+The Guest 2018 => The Guest 2018 {[tmdbid=81822;type=tv;s=1]}
+Mama Fairy and the Woodcutter => Mama Fairy and the Woodcutter {[tmdbid=83140;type=tv;s=1]}
+The Last Chance 2019 => The Last Chance 2019 {[tmdbid=87425;type=tv;s=1]}
+응답하라 1994 => 응답하라 1994 {[tmdbid=58761;type=tv;s=1]}
+Voice2 2018 => Voice2 2018 {[tmdbid=69087;type=tv;s=2]}
+
+#---------- 容器格式词 ----------
+#容器格式词（MP4/MKV/AVI/TS 等）不作为视频编码，仅当作独立字段时移除
+(?i)(?<=[. _-])(?:MP4|MKV|AVI|WMV|M2TS|MTS|MOV|FLV|RMVB|WEBM|TS)(?=[. _-]) =>
