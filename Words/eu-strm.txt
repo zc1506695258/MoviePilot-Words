@@ -1,0 +1,38 @@
+#===== 欧美剧 原盘Remux STRM 识别修正 =====
+#原则：替换文本保留原剧名并携带 tmdbid 与季数，避免元数据解析链塌陷（pix/video/audio 全为 null）
+#源目录：/mnt/mydisk/115strm/分享strm/原盘欧美剧特效字幕待整理/欧美剧 中英双语特效字幕 蓝光原盘Remux@ADE/
+#只锚定 ADE 发布组 + SxxExx，避免影响其他来源的同名剧集
+24\.S05E17\.(?=.*ADE) => 24小时.S05E17 {[tmdbid=1973;type=tv;s=5]}
+preacher\.S02E03\.(?=.*ADE) => 传教士.S02E03 {[tmdbid=64230;type=tv;s=2]}
+twinpeaks\.S02E02\.(?=.*ADE) => 双峰.S02E02 {[tmdbid=1920;type=tv;s=2]}
+gotham\.S02E05\.(?=.*ADE) => 哥谭.S02E05 {[tmdbid=60708;type=tv;s=2]}
+downtonabbey\.S02E04\.(?=.*ADE) => 唐顿庄园.S02E04 {[tmdbid=33907;type=tv;s=2]}
+poirot\.S02E03\.(?=.*ADE) => 大侦探波洛.S02E03 {[tmdbid=790;type=tv;s=2]}
+boardwalkempire\.S02E04\.(?=.*ADE) => 大西洋帝国.S02E04 {[tmdbid=1621;type=tv;s=2]}
+orangeisnewblack\.S02E03\.(?=.*ADE) => 女子监狱.S02E03 {[tmdbid=1424;type=tv;s=2]}
+youngsheldon\.S02E03\.(?=.*ADE) => 小谢尔顿.S02E03 {[tmdbid=71728;type=tv;s=2]}
+babylonberlin\.S02E06\.(?=.*ADE) => 巴比伦柏林.S02E06 {[tmdbid=66980;type=tv;s=2]}
+mildredpierce\.S01E03\.(?=.*ADE) => 幻世浮生.S01E03 {[tmdbid=39468;type=tv;s=1]}
+madmen\.S02E04\.(?=.*ADE) => 广告狂人.S02E04 {[tmdbid=1104;type=tv;s=2]}
+whydidnttheynotaskevans\.S01E02\.(?=.*ADE) => 悬崖上的谋杀.S01E02 {[tmdbid=157372;type=tv;s=1]}
+endeavour\.S02E03\.(?=.*ADE) => 摩斯探长前传.S02E03 {[tmdbid=44264;type=tv;s=2]}
+spartacus\.S02E03\.(?=.*ADE) => 斯巴达克斯.S02E03 {[tmdbid=46296;type=tv;s=2]}
+spartacus\.S03E02\.(?=.*ADE) => 斯巴达克斯.S03E02 {[tmdbid=46296;type=tv;s=3]}
+sexandthecity\.S02E03\.(?=.*ADE) => 欲望都市.S02E03 {[tmdbid=105;type=tv;s=2]}
+peakyblinders\.S02E03\.(?=.*ADE) => 浴血黑帮.S02E03 {[tmdbid=60574;type=tv;s=2]}
+pennyworth\.S02E03\.(?=.*ADE) => 潘尼沃斯.S02E03 {[tmdbid=79588;type=tv;s=2]}
+thebigbangtheory\.S02E05\.(?=.*ADE) => 生活大爆炸.S02E05 {[tmdbid=1418;type=tv;s=2]}
+trueblood\.S02E03\.(?=.*ADE) => 真爱如血.S02E03 {[tmdbid=10545;type=tv;s=2]}
+sherlockholmes\.S02E03\.(?=.*ADE) => 福尔摩斯探案集.S02E03 {[tmdbid=799;type=tv;s=2]}
+breakingbad\.S02E04\.(?=.*ADE) => 绝命毒师.S02E04 {[tmdbid=1396;type=tv;s=2]}
+americangods\.S02E03\.(?=.*ADE) => 美国众神.S02E03 {[tmdbid=46639;type=tv;s=2]}
+fearofthewalkingdead\.S02E04\.(?=.*ADE) => 行尸之惧.S02E04 {[tmdbid=62286;type=tv;s=2]}
+house\.S02E04\.(?=.*ADE) => 豪斯医生.S02E04 {[tmdbid=1408;type=tv;s=2]}
+tedlasso\.S02E03\.(?=.*ADE) => 足球教练.S02E03 {[tmdbid=97546;type=tv;s=2]}
+lucifer\.S02E04\.(?=.*ADE) => 路西法.S02E04 {[tmdbid=63174;type=tv;s=2]}
+lost\.S02E04\.(?=.*ADE) => 迷失.S02E04 {[tmdbid=4607;type=tv;s=2]}
+supernatural\.S02E04\.(?=.*ADE) => 邪恶力量.S02E04 {[tmdbid=1622;type=tv;s=2]}
+suits\.S02E04\.(?=.*ADE) => 金装律师.S02E04 {[tmdbid=37680;type=tv;s=2]}
+yellowstone\.S02E03\.(?=.*ADE) => 黄石.S02E03 {[tmdbid=73586;type=tv;s=2]}
+1883\.S01E03\.(?=.*ADE) => 黄石：1883.S01E03 {[tmdbid=118357;type=tv;s=1]}
+1923\.S01E03\.(?=.*ADE) => 黄石：1923.S01E03 {[tmdbid=157744;type=tv;s=1]}
